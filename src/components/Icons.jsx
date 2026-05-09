@@ -8,7 +8,7 @@ export function AppIcon({ processName = "", size = 44 }) {
   const brand  = BRANDS[processName.toLowerCase()] ?? null;
   const bg     = brand?.bg    ?? deriveColor(processName);
   const fg     = brand?.fg    ?? "#ffffff";
-  const letter = brand?.letter ?? processName.replace(/\.exe$/i, "").slice(0, 2).toUpperCase() || "?";
+  const letter = brand?.letter ?? (processName.replace(/\.exe$/i, "").slice(0, 2).toUpperCase() || "?");
   const fs     = letter.length > 2 ? size * 0.22
                : letter.length > 1 ? size * 0.29
                :                     size * 0.37;
